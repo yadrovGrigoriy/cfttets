@@ -1,0 +1,49 @@
+.list-item-type{
+    color: #d51d4c;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+.list-item-content{
+    @media screen and (max-width: 320px){
+        order:2;
+    }
+    .date{
+        display: flex;
+        margin-bottom: 10px;
+        
+        div{
+            margin-right: 2rem;
+        }
+        @media screen and (max-width: 320px){
+            flex-direction: column;
+        }
+    }
+    .file-name{
+        font-size: 18px;
+    }
+    .file-size{
+        font-size: 13px;
+        padding-top: 2px;
+        margin-left: .5rem;
+        color: #87a2e4;
+    }
+    .file-author{
+        margin-top: 20px;
+    }
+}
+.control-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 320px){
+        justify-content: flex-end;
+        position: relative;
+        top: -25px;
+        
+    }
+    div{
+        cursor: pointer;
+        margin-left: 1rem;
+    }
+    
+}

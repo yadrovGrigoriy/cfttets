@@ -1,0 +1,22 @@
+<ul 
+    *ngIf="items.length !== 0; else noItem"
+    class="list-group list-group-flush">
+    <li
+        
+        class="list-group-item"
+        *ngFor="let item of items"
+    >
+        <app-list-item 
+            
+            (removed)="removeItem($event)"
+            [item]="item"></app-list-item>
+    </li>
+</ul>
+
+
+<ng-template #noItem>
+    <div class="no-items">
+            Пока ничего нет...
+    </div>
+    
+</ng-template>

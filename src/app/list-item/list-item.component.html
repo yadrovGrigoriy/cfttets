@@ -1,22 +1,38 @@
 <div class="row">
-    <div class="col">
-        <div class="list-item-type">DOC</div>
+    <div class="col-lg-2">
+        <div class="list-item-type">{{ item.type }}</div>
     </div>
-    <div class="col">
-        <div class="list-item-content">
-            <div class="date">
-                <div class="upload-date"><small>Дата загрузки 11.12.2015</small></div>
-                <div class="end-date"><small>Срок хранения до 22.12.2015</small></div>
-            </div>
-            <div class="file-name">Название фаила</div> <span class="file-size">15 mb</span>
-            <div class="file-author"><small>Вася петров </small> </div>
+    <div class="col list-item-content">
+        <div class="date">
+            <div class="upload-date"><small>Дата загрузки {{ item.created | date: 'dd.MM.yyyy'  }}</small></div>
+            <div class="end-date"><small>Срок хранения до {{ item.storage | date: 'dd.MM.yyyy' }}</small></div>
         </div>
-
+        <div class="d-flex align-items-center">
+            <div class="file-name">{{ item.fileName }}</div> 
+            <div class="file-size">{{ item.size | fileSizeView }}</div>
+        </div>
+        <div class="file-author"><small>{{ item.author }}</small> </div>
     </div>
-    <div class="col">
-        <div class="control-icons">
-            <div class="dowdload-icon"></div>
-            <div class="remove-icon"></div>
+
+    <div class="col-lg-2 control-icons">
+        <div class="dowdload-icon" >
+            <a href="assets/files/test.doc" downdload>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                    <g fill="none" fill-rule="evenodd" stroke="#B9B9B9" stroke-linecap="round">
+                        <path d="M4.493 20v2.262a2.262 2.262 0 0 0 2.253 2.262h16.545a2.252 2.252 0 0 0 2.252-2.262v-2.263M15.516 6v13.515M9.728 16.353l5.775 3.276 5.685-3.276"/>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <div
+            class="remove-icon"    
+            (click)="removeItem(item.id)" 
+        >
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                    <g fill="none" fill-rule="evenodd" stroke="#B9B9B9">
+                        <path d="M6.602 9.5l2.813 15h11.17l2.813-15H6.602zM4 6.5h21.984M12.5 4.5h5v2h-5z"/>
+                    </g>
+                </svg>
         </div>
     </div>
 </div>

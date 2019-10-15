@@ -1,33 +1,43 @@
-<form class="form">
-    <div class="row">
-        <div class="col">
-            <div class="date-control">
-                <label> <small>Выберите период</small> </label>
-                <input class="form-control  form-control-lg " type="date" placeholder="">
-                <span class="date-separator"> - </span>
-                <input class="form-control  form-control-lg" type="date" placeholder="">
-            </div>
+<form class="row form">
+        <div class=" col date-control">
+            <label> <small>Выберите период</small> </label>
+            <input 
+                class="form-control  form-control-lg" 
+                type="date" 
+                [(ngModel)]="filter.dateFrom"
+                name="dateFrom"
+            >
+            <span class="date-separator"> - </span>
+            <input 
+                class="form-control form-control-lg" 
+                type="date" 
+                [(ngModel)]="filter.dateTo"
+                name="dateTo"
+            >
         </div>
-    </div>
-    <div class="col">
-    <div class="form-row align-items-center type-control">
-        <div class="col">
-            <label class="mr-sm-2" for="inlineFormCustomSelect"><small>Выбирите тип</small></label>
-            <select class="custom-select custom-select-lg" id="inlineFormCustomSelect">
-                <option selected>Все</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
+        <div class="col-lg-4 type-control">
+                <label class="mr-sm-2" for="inlineFormCustomSelect"><small>Выбирите тип</small></label>
+                <select 
+                    class="custom-select custom-select-lg" 
+                    [(ngModel)]="filter.type" 
+                    name="type"
+                >
+                    <option  [ngValue]="'all'">Все</option>
+                    <option  *ngFor="let option of options" [ngValue]="option">{{ option }}</option>
+                </select>
         </div>
-    </div>
-    </div>
-    <div class="col">
-        <div class="buttons">
-            <button  class="btn btn-primary btn-lg clear" >Очистить</button>
-            <button  class="btn btn-primary btn-lg apply">Применить</button>
+        <div class="col buttons">
+            <button  
+                class="btn btn-primary btn-lg clear" 
+                (click)="clearAll($event)"
+            >
+                Очистить
+            </button>
+            <button 
+                (click)="filterItems(); $event.preventDefault()"  
+                class="btn btn-primary btn-lg apply"
+            >
+                Применить
+            </button>
         </div>
-
-    </div>
-    
 </form>

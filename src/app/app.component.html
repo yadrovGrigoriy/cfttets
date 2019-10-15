@@ -2,16 +2,12 @@
   <div class="wrapper">
         <div class="title">
           Ранее сохраненные файлы
+          
         </div>
         <app-controls></app-controls>
-        <ul class="list-group list-group-flush">
-            <li 
-              class="list-group-item"
-              *ngFor="let item of [1,2,3,4,5]"
-            >
-              <app-list-item [item]="item"></app-list-item>
-            </li>
-          </ul>
+        <app-upload></app-upload>
+        <app-items></app-items>
+        
         
       </div>
 

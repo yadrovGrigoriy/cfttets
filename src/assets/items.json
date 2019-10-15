@@ -1,0 +1,40 @@
+{
+    "items":[
+    {
+        "id": 1,
+        "type":"DOC",
+        "size": 15,
+        "author":"jack",
+        "fileName": "Названиек фаила 1",
+        "created": "2018-12-11",
+        "storage": "2020-12-11"
+    },
+    {
+        "id": 2,
+        "type":"PDF",
+        "size": 75,
+        "author":"Bob Marlye Hutarley",
+        "fileName": "Названиек фаила 2",
+        "created": "2017-10-10",
+        "storage": "2018-11-11"
+    },
+    {
+        "id": 3,
+        "type":"XML",
+        "size": 111,
+        "author":"Alice",
+        "fileName": "Названиек фаила в названии фаила фаила номер 1",
+        "created": "2016-12-11",
+        "storage": "2020-12-11"
+    },
+    {
+        "id": 4,
+        "type":"DOC",
+        "size": 45,
+        "author":"jack BLACK",
+        "fileName": "Названиек фаила 1",
+        "created": "2017-10-11",
+        "storage": "2020-12-11"
+    }
+]
+}
